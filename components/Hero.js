@@ -1,8 +1,9 @@
 'use client'
 
 import Image from "next/image"
-import Link from 'next/link'
-import { useState } from 'react'
+import Link from "next/link"
+
+import { useState } from "react"
 
 export default function Hero(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Hero(){
               height={40}
               className="absolute top-10 right-10 lg:hidden cursor-pointer"
               onClick={toggleMenu}
+              alt="Menu Icon"
             />
 
             <Image 
@@ -34,6 +36,7 @@ export default function Hero(){
               width={50}
               height={50}
               className="absolute top-6 left-10 lg:left-64"
+              alt="Logo"
             />
 
             {isMenuOpen && (
@@ -44,6 +47,7 @@ export default function Hero(){
                     height={40}
                     className="absolute top-10 right-10 lg:hidden cursor-pointer"
                     onClick={toggleMenu}
+                    alt="X Icon"
                 />
                 <ul className="flex flex-col w-full text-center mt-24 text-lavender-blush text-xl gap-4">
                   <li className="text-2xl"><Link href="/" scroll={true}>Home</Link></li>
@@ -52,15 +56,15 @@ export default function Hero(){
                   <li className="text-2xl"><Link href="#contact">Contact</Link></li>
                 </ul>
                 <div className="flex mt-24 gap-4">
-                    <Link href="https://www.linkedin.com/in/ralphstout/"><Image src={'/Linkedin.png'} width={40} height={40} className="m-2"/></Link>
-                    <Link href="https://github.com/CodeByRalph"><Image src={'/github.png'} width={40} height={40} className="m-2"/></Link>
+                    <Link href="https://www.linkedin.com/in/ralphstout/"><Image src={'/Linkedin.png'} width={40} height={40} className="m-2" alt="linkedin logo"/></Link>
+                    <Link href="https://github.com/CodeByRalph"><Image src={'/github.png'} width={40} height={40} className="m-2" alt="Github Logo"/></Link>
                 </div>
               </div>
 
             )}
 
             <div className="w-4/5 lg:w-1/2">
-                <h1 className="text-lavender-blush text-xl lg:text-2xl lg:pb-2">Hello I'm,</h1>
+                <h1 className="text-lavender-blush text-xl lg:text-2xl lg:pb-2">Hello I&apos;m,</h1>
                 <h1 className="text-saffron opacity-80 text-5xl lg:text-7xl">Ralph Stout</h1>
                 <h1 className="text-lavender-blush text-3xl opacity-60 lg:text-5xl lg:pt-3">a software Engineer</h1>
 

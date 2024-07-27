@@ -18,7 +18,7 @@ export default function Navbar() {
           </ul>
         </nav>
         <button onClick={SetNavbar(!navbar)}>
-          {navbar ? (<Image src={"/MenuIcon.png"} width={40} height={40} className="absolute top-10 right-10 lg:hidden"/>) : (<Image src={"/MenuIcon.png"} width={40} height={40} className="absolute top-10 right-10 lg:hidden"/>)}
+          {navbar ? (<Image src={"/MenuIcon.png"} width={40} height={40} className="absolute top-10 right-10 lg:hidden" alt="Menu Icon"/>) : (<Image src={"/MenuIcon.png"} width={40} height={40} className="absolute top-10 right-10 lg:hidden" alt="MenuIcon"/>)}
         </button>
     </div>
   )

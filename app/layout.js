@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         {children}
         <footer className="bg-navy-blue w-full h-25 text-center text-lavender-blush flex justify-center">
-          <Link href="https://www.linkedin.com/in/ralphstout/"><Image src={'/Linkedin.png'} width={30} height={30} className="m-2"/></Link>
-          <Link href="https://github.com/CodeByRalph"><Image src={'/github.png'} width={30} height={30} className="m-2"/></Link>
+          <Link href="https://www.linkedin.com/in/ralphstout/"><Image src={'/Linkedin.png'} width={30} height={30} className="m-2" alt="linkedin Logo"/></Link>
+          <Link href="https://github.com/CodeByRalph"><Image src={'/github.png'} width={30} height={30} className="m-2" alt="github logo"/></Link>
         </footer>
       </body>
     </html>

@@ -1,9 +1,9 @@
 export default function Contact() {
   return (
     <section id="contact" className="w-11/12 mx-auto my-10 p-5 lg:w-1/3">
-      <h1 className="text-4xl mb-5 font-bold text-saffron">Let's Connect</h1>
+      <h1 className="text-4xl mb-5 font-bold text-saffron">Let&apos;s Connect</h1>
       <p className="mb-5 font-light">
-      If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.
+      If you want to know more about me or my work, or if you would just like to say hello, send me a message. I&apos;d love to hear from you.
       </p>
       <form>
         <div className="mb-4">
