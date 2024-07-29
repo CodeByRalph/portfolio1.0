@@ -15,10 +15,10 @@ export default function Hero(){
         <section className="bg-navy-blue w-full h-svh flex flex-col justify-center items-center">
             <nav className="hidden lg:flex lg:absolute lg:top-10 lg:right-24">
               <ul className="flex text-lavender-blush text-xl gap-10">
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="#projects">Projects</Link></li>
-                <li><Link href="#experience">Experience</Link></li>
-                <li><Link href="#contact">Contact</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:500ms] lg:opacity-0 "><Link href="/">Home</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:600ms] lg:opacity-0 "><Link href="#projects">Projects</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:700ms] lg:opacity-0 "><Link href="#experience">Experience</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:800ms] lg:opacity-0 "><Link href="#contact">Contact</Link></li>
               </ul>
             </nav>
 
@@ -26,7 +26,7 @@ export default function Hero(){
               src="/MenuIcon.png"
               width={40}
               height={40}
-              className="absolute top-10 right-10 lg:hidden cursor-pointer"
+              className="animate-appear [--appear-delay:500ms] opacity-0 absolute top-10 right-10 lg:hidden cursor-pointer"
               onClick={toggleMenu}
               alt="Menu Icon"
             />
@@ -35,7 +35,7 @@ export default function Hero(){
               src="/Logo.png"
               width={50}
               height={50}
-              className="absolute top-6 left-10 lg:left-64"
+              className="animate-appear [--appear-delay:500ms] opacity-0 absolute top-6 left-10 lg:left-64"
               alt="Logo"
             />
 
@@ -64,11 +64,11 @@ export default function Hero(){
             )}
 
             <div className="w-4/5 lg:w-1/2">
-                <h1 className="text-lavender-blush text-xl lg:text-2xl lg:pb-2">Hello I&apos;m,</h1>
-                <h1 className="text-saffron opacity-80 text-5xl lg:text-7xl">Ralph Stout</h1>
-                <h1 className="text-lavender-blush text-3xl opacity-60 lg:text-5xl lg:pt-3">a software Engineer</h1>
+                <h1 className="animate-slidein [--slidein-delay:300ms] opacity-0 text-lavender-blush text-xl lg:text-2xl lg:pb-2">Hello I&apos;m,</h1>
+                <h1 className="animate-slidein [--slidein-delay:500ms] opacity-0 text-saffron text-5xl lg:text-7xl">Ralph Stout</h1>
+                <h1 className="animate-slidein [--slidein-delay:500ms] opacity-0 text-lavender-blush text-3xl lg:text-5xl lg:pt-3">a software Engineer</h1>
 
-                <p className="text-lavender-blush pt-3 opacity-70 lg:text-xl lg:w-3/4">
+                <p className="animate-slidein [--slidein-delay:700ms] opacity-0 text-lavender-blush pt-3 lg:text-xl lg:w-3/4">
                     I am currently focusing on creating amazing projects while expanding my tech stack!
                 </p>
             </div>
