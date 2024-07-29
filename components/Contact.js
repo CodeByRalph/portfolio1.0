@@ -1,18 +1,33 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import emailjs from "@emailjs/browser";
 
+
 export default function Contact() {
+
   const nameRef = useRef()
   const emailRef = useRef()
   const messageRef = useRef()
+  const [emailError, setEmailError] = useState(false);
+  const router = useRouter()
+
 
   const sendMessage = (e) => {
     e.preventDefault()
+    const email = emailRef.current.value;
+
+    if (!validateEmail(email)) {
+      setEmailError(true);
+      return;
+    }
+
+    setEmailError(false);
+
     const templateParams = {
       from_name: nameRef.current.value,
-      sender_email: emailRef.current.value,
+      sender_email: email,
       message: messageRef.current.value
     };
     
@@ -25,16 +40,29 @@ export default function Contact() {
     .then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text);
-        alert("Thanks, message sent successfully");
+        router.push('/email-confirm')
       },
       function (error) {
-        alert("OOPs something went wrong... Try again later");
         console.log("FAILED...", error);
       }
     );
     nameRef.current.value = ""
     emailRef.current.value = ""
     messageRef.current.value = ""
+  };
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleEmailChange = () => {
+    const email = emailRef.current.value;
+    if (!validateEmail(email)) {
+      setEmailError(true);
+    } else {
+      setEmailError(false);
+    }
   };
 
   return (
@@ -66,9 +94,13 @@ export default function Contact() {
             id="email"
             name="email"
             ref={emailRef}
-            className="w-full px-3 py-2 bg-lavender-blush border-b-2 border-black focus:outline-none"
+            className={`w-full px-3 py-2 bg-lavender-blush border-b-2 border-black ${
+              emailError ? 'focus:border-red-500' : 'focus:border-green-500'
+            } focus:outline-none`}
+            onChange={handleEmailChange}
             required
           />
+          {emailError && <p className="text-red-500 text-sm">Please enter a valid email address.</p>}
         </div>
         <div className="mb-4">
           <label className="block text-sm mb-1 font-medium" htmlFor="message">
@@ -86,7 +118,7 @@ export default function Contact() {
         </div>
         <button
           type="submit"
-          className="w-full bg-saffron shadow-lg opacity-90 text-white font-bold py-2 rounded-lg lg:w-1/2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-saffron shadow-lg opacity-90 text-white font-bold py-2 rounded-lg lg:w-1/2 hover:bg-navy-blue focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Send Message
         </button>
