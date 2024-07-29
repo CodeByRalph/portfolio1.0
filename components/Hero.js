@@ -15,10 +15,10 @@ export default function Hero(){
         <section className="bg-navy-blue w-full h-svh flex flex-col justify-center items-center">
             <nav className="hidden lg:flex lg:absolute lg:top-10 lg:right-24">
               <ul className="flex text-lavender-blush text-xl gap-10">
-                <li className="lg:animate-appear lg:[--appear-delay:500ms] lg:opacity-0 "><Link href="/">Home</Link></li>
-                <li className="lg:animate-appear lg:[--appear-delay:600ms] lg:opacity-0 "><Link href="#projects">Projects</Link></li>
-                <li className="lg:animate-appear lg:[--appear-delay:700ms] lg:opacity-0 "><Link href="#experience">Experience</Link></li>
-                <li className="lg:animate-appear lg:[--appear-delay:800ms] lg:opacity-0 "><Link href="#contact">Contact</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:500ms] lg:opacity-0 hover:text-saffron"><Link href="/">Home</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:600ms] lg:opacity-0 hover:text-saffron"><Link href="#projects">Projects</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:700ms] lg:opacity-0 hover:text-saffron"><Link href="#experience">Experience</Link></li>
+                <li className="lg:animate-appear lg:[--appear-delay:800ms] lg:opacity-0 hover:text-saffron"><Link href="#contact">Contact</Link></li>
               </ul>
             </nav>
 
@@ -69,8 +69,11 @@ export default function Hero(){
                 <h1 className="animate-slidein [--slidein-delay:500ms] opacity-0 text-lavender-blush text-3xl lg:text-5xl lg:pt-3">a software Engineer</h1>
 
                 <p className="animate-slidein [--slidein-delay:700ms] opacity-0 text-lavender-blush pt-3 lg:text-xl lg:w-3/4">
-                    I am currently focusing on creating amazing projects while expanding my tech stack!
+                    I am currently focusing on creating amazing projects while expanding my tech stack
                 </p>
+            </div>
+            <div className="animate-appear [--appear-delay:500ms] opacity-0 absolute bottom-10 lg:bottom-20">
+              <Image src="/DownArrow.png" width={50} height={50} alt="Down Arrow" className="animate-bounce"/>
             </div>
         </section>
     )
