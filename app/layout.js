@@ -1,6 +1,9 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,6 +24,7 @@ export default function RootLayout({ children }) {
           <Link href="https://www.linkedin.com/in/ralphstout/"><Image src={'/Linkedin.png'} width={30} height={30} className="m-2" alt="linkedin Logo"/></Link>
           <Link href="https://github.com/CodeByRalph"><Image src={'/github.png'} width={30} height={30} className="m-2" alt="github logo"/></Link>
         </footer>
+        <GoogleAnalytics gaId="G-XN3QM0ZG67" />
       </body>
     </html>
   );
